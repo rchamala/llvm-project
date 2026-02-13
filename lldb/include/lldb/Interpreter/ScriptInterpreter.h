@@ -33,6 +33,7 @@
 #include "lldb/Interpreter/Interfaces/ScriptedFrameProviderInterface.h"
 #include "lldb/Interpreter/Interfaces/ScriptedPlatformInterface.h"
 #include "lldb/Interpreter/Interfaces/ScriptedProcessInterface.h"
+#include "lldb/Interpreter/Interfaces/ScriptedSymbolLocatorInterface.h"
 #include "lldb/Interpreter/Interfaces/ScriptedThreadInterface.h"
 #include "lldb/Interpreter/ScriptObject.h"
 #include "lldb/Symbol/SymbolContext.h"
@@ -542,6 +543,11 @@ public:
 
   virtual lldb::ScriptedFrameProviderInterfaceSP
   CreateScriptedFrameProviderInterface() {
+    return {};
+  }
+
+  virtual lldb::ScriptedSymbolLocatorInterfaceSP
+  CreateScriptedSymbolLocatorInterface() {
     return {};
   }
 

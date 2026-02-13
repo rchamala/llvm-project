@@ -104,6 +104,9 @@ public:
   lldb::ScriptedFrameProviderInterfaceSP
   CreateScriptedFrameProviderInterface() override;
 
+  lldb::ScriptedSymbolLocatorInterfaceSP
+  CreateScriptedSymbolLocatorInterface() override;
+
   lldb::ScriptedThreadPlanInterfaceSP
   CreateScriptedThreadPlanInterface() override;
 
@@ -202,7 +205,7 @@ public:
 
   bool GetLongHelpForCommandObject(StructuredData::GenericSP cmd_obj_sp,
                                    std::string &dest) override;
-                                   
+
   StructuredData::ObjectSP
   GetOptionsForCommandObject(StructuredData::GenericSP cmd_obj_sp) override;
 
@@ -211,7 +214,7 @@ public:
 
   bool SetOptionValueForCommandObject(StructuredData::GenericSP cmd_obj_sp,
                                       ExecutionContext *exe_ctx,
-                                      llvm::StringRef long_option, 
+                                      llvm::StringRef long_option,
                                       llvm::StringRef value) override;
 
   void OptionParsingStartedForCommandObject(
